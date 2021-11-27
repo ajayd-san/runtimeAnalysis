@@ -1,3 +1,4 @@
+package Algorithms;
 import java.util.Random;
 
 public class QuickSort{
@@ -34,19 +35,8 @@ public class QuickSort{
         quicksrt(arr, pivotIndex + 1, end);
     }
 
-    public static void quicksrt(Integer[] arr){
+    public static Integer[] quicksrt(Integer[] arr){
         quicksrt(arr, 0, arr.length - 1);
-    }
-
-    public static void main(String[] args) {
-        RandomGen rg = new RandomGen();
-        Integer[] random_list = rg.get_random(20000);
-        long startTime = System.nanoTime();
-        quicksrt(random_list);
-        long endTime = System.nanoTime();
-
-        System.out.println("time taken is " + (endTime - startTime)/1000000);
-        System.out.println();
-        // for (int r : random_list) System.out.print(r + " ");
+        return arr;
     }
 }

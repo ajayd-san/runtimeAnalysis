@@ -1,3 +1,4 @@
+package Algorithms;
 
 public class BinaryTree {
     private static Node root;
@@ -25,7 +26,6 @@ public class BinaryTree {
         for (int num : arr)
             root = add(root, num);
     }
-
 
     private static void inorder(Node root, Integer[] arr){
         if (root == null) return;
