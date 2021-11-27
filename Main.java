@@ -2,6 +2,8 @@ import Utilities.Benchmark;
 
 public class Main {
     public static void main(String[] args) {
-        Benchmark.BenchmarkAll(10000000);
+        Benchmark test = new Benchmark();
+
+        test.BenchmarkAll(1000000, 5);
     }
 }

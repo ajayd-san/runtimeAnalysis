@@ -11,8 +11,6 @@ public class BinaryTree {
 
         public Node(int val){
             this.value = val;
-            this.left = null;
-            this.right = null;
         }
     }
 
@@ -40,6 +38,9 @@ public class BinaryTree {
         add_nodes(arr);
         inorder(root, arr);
 
+        //** resetting index and root since they are static to avoid exceptions.
+        index = 0;
+        root = null;
         return arr;
     }
 }
