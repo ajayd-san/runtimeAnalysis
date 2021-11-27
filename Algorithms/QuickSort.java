@@ -4,13 +4,13 @@ import java.util.Random;
 public class QuickSort{
 
     private static Random randomGen = new Random();
-    private static void swap(Integer[] arr, int i, int j){
+    private static void swap(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    private static int partition(Integer[] arr, int start, int end){
+    private static int partition(int[] arr, int start, int end){
         int pivotIndex = randomGen.nextInt(start, end);
         swap(arr, pivotIndex, end);
         int pivot = arr[end];
@@ -27,7 +27,7 @@ public class QuickSort{
 
         return i + 1;
     }
-    private static void quicksrt(Integer[] arr, int start, int end){
+    private static void quicksrt(int[] arr, int start, int end){
         if (start >= end) return;
         int pivotIndex = partition(arr, start, end);
 
@@ -35,7 +35,7 @@ public class QuickSort{
         quicksrt(arr, pivotIndex + 1, end);
     }
 
-    public static Integer[] quicksrt(Integer[] arr){
+    public static int[] quicksrt(int[] arr){
         quicksrt(arr, 0, arr.length - 1);
         return arr;
     }

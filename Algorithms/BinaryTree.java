@@ -11,6 +11,8 @@ public class BinaryTree {
 
         public Node(int val){
             this.value = val;
+            this.left = null;
+            this.right = null;
         }
     }
 
@@ -22,19 +24,19 @@ public class BinaryTree {
         return root;
     }
 
-    private static void add_nodes(Integer[] arr){
+    private static void add_nodes(int[] arr){
         for (int num : arr)
             root = add(root, num);
     }
 
-    private static void inorder(Node root, Integer[] arr){
+    private static void inorder(Node root, int[] arr){
         if (root == null) return;
         inorder(root.left, arr);
         arr[index++] = root.value;
         inorder(root.right, arr);
     }
 
-    public static Integer[] bstSort(Integer[] arr){
+    public static int[] bstSort(int[] arr){
         add_nodes(arr);
         inorder(root, arr);
 

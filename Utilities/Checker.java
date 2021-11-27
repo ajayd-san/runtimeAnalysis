@@ -2,7 +2,7 @@ package Utilities;
 import Exceptions.NotSortedException;
 
 public class Checker {
-    public static boolean checkArr(Integer[] arr){
+    public static boolean checkArr(int[] arr){
         for (int i = 0; i < arr.length - 1; ++i){
             try {
                 if (arr[i] > arr[i + 1]){

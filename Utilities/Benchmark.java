@@ -10,16 +10,17 @@ import Algorithms.QuickSort;
 public class Benchmark {
     public static void BenchmarkAll(int size){
 
-        System.out.printf("Benchmark for %d elements\n-------------------------------\n", size);
-        Integer[] arr = new RandomGen().get_random(size);
-        Integer[] arrCopy = Arrays.copyOf(arr, arr.length);
+        int[] arr = new RandomGen().get_random(size);
+        int[] arrCopy = Arrays.copyOf(arr, arr.length);
         Map<String, Long> timeRecords = new HashMap<>();
+
+        System.out.printf("Benchmark for %d elements\n-------------------------------\n", size);
 
         long startTime = System.nanoTime();
         arr = BinaryTree.bstSort(arr);
         long endTime = System.nanoTime();
-        timeRecords.put("BST inorder", (endTime - startTime)/1000000);
 
+        timeRecords.put("BST inorder", (endTime - startTime)/1000000);
         Checker.checkArr(arr);
 
         startTime = System.nanoTime();
